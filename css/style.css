@@ -1,0 +1,878 @@
+/* ---------- General ----------*/
+/* -----------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --transition-speed: 600ms;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+hr.dotted {
+  height: 4px;
+  background-image: linear-gradient(
+      90deg,
+      transparent,
+      transparent 50%,
+      #fff 50%,
+      #fff 100%
+    ),
+    linear-gradient(50deg, #ff5c97, #7b40c0);
+  background-size: 25px 3px, 100% 3px;
+  border: none;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.1;
+}
+
+/* ---------- Bootstrap Grid ----------*/
+/* ------------------------------------*/
+.col-lg-6,
+.col-md-6 {
+  padding: 0;
+  margin: 0;
+}
+
+/* ---------- Loader ----------*/
+/* ----------------------------*/
+.loader-wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #242f3f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loader {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  position: relative;
+  border: 4px solid #fff;
+  animation: loader 2s infinite ease;
+}
+
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  animation: loader-inner 2s infinite ease-in;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(180deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+
+  25% {
+    height: 0%;
+  }
+
+  50% {
+    height: 100%;
+  }
+
+  75% {
+    height: 100%;
+  }
+
+  100% {
+    height: 0%;
+  }
+}
+
+/* ---------- Navigation Bar ----------*/
+/* ------------------------------------*/
+.navbar {
+  padding: 2rem 3rem;
+}
+
+.navbar-brand {
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0;
+}
+
+.navbar-brand i {
+  color: #ff5c97;
+}
+
+.navbar-brand span {
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+  vertical-align: super;
+  color: #7b40c0;
+}
+
+.navbar-toggler {
+  padding: 0.5rem;
+}
+
+.navbar-light .navbar-toggler {
+  border: none;
+  padding: 0;
+  outline: none;
+}
+
+.menu-icon {
+  color: #ff5c97;
+  font-size: 3rem;
+  transition: var(--transition-speed);
+}
+
+.navbar-light .navbar-toggler:hover svg {
+  transform: rotate(-180deg);
+}
+
+.navbar-light .navbar-toggler:hover::after svg {
+  transform: rotate(180deg);
+}
+
+.nav-item {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.navbar-nav {
+  padding-left: 0;
+}
+
+.navbar-light .navbar-nav .active > .nav-link {
+  color: #ff5c97;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #2b4b80;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #ff5c97;
+}
+
+.navbar-light .navbar-nav .nav-link:focus {
+  color: #ff5c97;
+}
+
+/* -------------------- Home Page --------------------*/
+/* ---------------------------------------------------*/
+
+/* ---------- Home Jumbotron ----------*/
+/* ------------------------------------*/
+.home-section {
+  margin-bottom: 10rem;
+}
+
+.jumbo-left {
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-top: 3rem;
+  animation: fadeInUp;
+  animation-duration: 0.7s;
+}
+
+.jumbo-right {
+  float: right;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  animation: fadeIn;
+  animation-duration: 1.5s;
+}
+
+.jumbo-left h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 7.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.9;
+  color: #2b4b80;
+}
+
+.jumbo-left p {
+  margin-top: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 2.5rem;
+  color: rgb(97, 97, 97);
+}
+
+.jumbo-left button {
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 0.6rem 3rem 0.6rem;
+  margin-right: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.jumbo-left button i {
+  padding-right: 0.5rem;
+}
+
+.jumbo-left > button:nth-of-type(1) {
+  color: white;
+  background-color: #4043bc;
+  border-color: #4043bc;
+}
+
+.jumbo-left > button:nth-of-type(1):hover,
+.jumbo-left > button:nth-of-type(1):focus {
+  background-color: transparent;
+  border-color: #4043bc;
+  color: #4043bc;
+}
+
+.jumbo-left > button:nth-of-type(2) {
+  color: white;
+  background-color: #ff5c97;
+  border-color: #ff5c97;
+}
+
+.jumbo-left > button:nth-of-type(2):hover,
+.jumbo-left > button:nth-of-type(2):focus {
+  background-color: transparent;
+  border-color: #ff5c97;
+  color: #ff5c97;
+}
+
+/* ---------- SEO Section ----------*/
+/* ---------------------------------*/
+.seo-section {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
+
+.seo-title {
+  text-align: center;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.seo-title h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 5.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #2b4b80;
+  padding-bottom: 10rem;
+}
+
+.service-card1,
+.service-card4 {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.service-card2,
+.service-card5 {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.service-card3,
+.service-card6 {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.service-card4,
+.service-card5,
+.service-card6 {
+  margin-top: 5rem;
+}
+
+.service-card1,
+.service-card2,
+.service-card3,
+.service-card4,
+.service-card5,
+.service-card6 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  height: 40rem;
+  box-shadow: 0px 10px 30px 0px rgba(165, 165, 165, 0.1);
+}
+
+.service-card1 i,
+.service-card2 i,
+.service-card3 i,
+.service-card4 i,
+.service-card5 i,
+.service-card6 i {
+  color: #fa5c97;
+}
+
+.service-card1 h4,
+.service-card2 h4,
+.service-card3 h4,
+.service-card4 h4,
+.service-card5 h4,
+.service-card6 h4 {
+  font-family: "Raleway", sans-serif;
+  font-size: 2.7rem;
+  font-weight: 500;
+  color: #2b4b80;
+  margin-top: 5rem;
+}
+
+.service-card1 p,
+.service-card2 p,
+.service-card3 p,
+.service-card4 p,
+.service-card5 p,
+.service-card6 p {
+  margin-top: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 2.5rem;
+  color: rgb(97, 97, 97);
+}
+
+.get-started {
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.get-started a {
+  text-transform: uppercase;
+  margin-left: 0.5rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #7b40c0;
+}
+
+.get-started i {
+  color: #7b40c0;
+}
+
+/* ---------- Footer ----------*/
+/* ----------------------------*/
+.footer-main {
+  margin-top: 10rem;
+  padding-top: 10rem;
+  background-image: url("/img/footer_bg.png");
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+}
+
+.footer-brand,
+.footer-txt {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.footer-navigation {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.footer-contact {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.footer-brand i {
+  color: #ff5c97;
+}
+
+.footer-brand span {
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  color: #7b40c0;
+}
+
+.footer-txt {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 2.7rem;
+  color: rgb(97, 97, 97);
+  margin-top: 4rem;
+}
+
+.footer-txt p {
+  justify-content: center;
+}
+
+.footer-navigation h4,
+.footer-contact h4 {
+  font-family: "Raleway", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #2b4b80;
+  margin-bottom: 3rem;
+}
+
+.footer-navigation ul li {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 2.7rem;
+  list-style-type: none;
+  margin-bottom: 1rem;
+}
+
+.footer-navigation ul li a {
+  color: rgb(97, 97, 97);
+  text-decoration: none;
+}
+
+.footer-navigation .footer-active {
+  color: #ff5c97;
+}
+
+.footer-contact p,
+.footer-contact a {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 2.7rem;
+  color: rgb(97, 97, 97);
+  text-decoration: none;
+}
+
+.footer-contact a {
+  color: #7b40c0;
+}
+
+.copy2020 {
+  display: flex;
+  justify-content: center;
+}
+
+.copy2020 p {
+  margin-bottom: 0;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.23rem;
+  font-weight: 400;
+  color: rgb(168, 168, 168);
+  text-decoration: none;
+}
+
+/* -------------------- Clients Page --------------------*/
+/* ------------------------------------------------------*/
+/* ---------- Clients Section ----------*/
+/* -------------------------------------*/
+
+.clients-section {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  animation: fadeInUp;
+  animation-duration: 0.7s;
+}
+
+.client-brands {
+  text-align: center;
+}
+
+.client-brands h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 5.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #2b4b80;
+  padding-bottom: 4.5rem;
+}
+
+.client-brands i {
+  padding-right: 4rem;
+  padding-left: 4rem;
+  color: #d3d3d3;
+}
+
+/* ---------- Testimonials Section ----------*/
+/* ------------------------------------------*/
+.carousel {
+  margin-top: 10rem;
+  text-align: center;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%232b4b80' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%232b4b80' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+.testimonials-img {
+  width: 150px;
+  object-fit: cover;
+  height: 150px;
+  border-radius: 100%;
+  margin-top: 2.5rem;
+}
+
+.testimonials-title {
+  font-family: "Raleway", sans-serif;
+  font-size: 3.6rem;
+  font-weight: 600;
+  color: #2b4b80;
+}
+
+.testimonials-name {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 2.7rem;
+  color: rgb(97, 97, 97);
+  text-decoration: none;
+  margin-left: 2rem;
+}
+
+/* -------------------- About Page --------------------*/
+/* ----------------------------------------------------*/
+/* ---------- About Us ----------*/
+/* ------------------------------*/
+.about-image {
+  margin-right: 3rem;
+  margin: 3rem;
+  margin-bottom: 10rem;
+  animation: fadeIn;
+  animation-duration: 1.5s;
+}
+
+.about-content {
+  margin: 10rem 3rem 10rem;
+  animation: fadeInUp;
+  animation-duration: 0.7s;
+}
+
+.about-content h3 {
+  color: #2b4b80;
+  text-align: right;
+  font-family: "Raleway", sans-serif;
+  font-size: 6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.9;
+}
+
+.about-content p {
+  color: rgb(134, 134, 134);
+  font-family: "Roboto", sans-serif;
+  font-size: 1.85rem;
+  font-weight: 400;
+  line-height: 2.5rem;
+  text-align: right;
+  margin-top: 1.5rem;
+}
+
+.the-team {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10rem;
+  text-align: center;
+}
+
+.the-team h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 5.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #2b4b80;
+  padding-bottom: 4.5rem;
+}
+
+.fit-img {
+  width: 100%;
+  object-fit: cover;
+  height: 400px;
+}
+
+.team-card1,
+.team-card2,
+.team-card3,
+.team-card4,
+.team-card5,
+.team-card6 {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
+
+.team-card4,
+.team-card5,
+.team-card6 {
+  margin-top: 2.5rem;
+}
+
+.team-card1 h4,
+.team-card2 h4,
+.team-card3 h4,
+.team-card4 h4,
+.team-card5 h4,
+.team-card6 h4 {
+  font-family: "Raleway", sans-serif;
+  font-size: 2.7rem;
+  font-weight: 500;
+  color: #2b4b80;
+  margin-top: 2.5rem;
+}
+
+.team-card1 p,
+.team-card2 p,
+.team-card3 p,
+.team-card4 p,
+.team-card5 p,
+.team-card6 p {
+  margin-top: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 2.5rem;
+  color: rgb(97, 97, 97);
+}
+
+/* -------------------- Contact Page --------------------*/
+/* ----------------------------------------------------*/
+/* ---------- Contact Us ----------*/
+/* ------------------------------*/
+.contact-section {
+  margin-top: 8rem;
+  animation: fadeIn;
+  animation-duration: 1.5s;
+}
+
+.contact-form label {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 2.5rem;
+  color: rgb(97, 97, 97);
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  resize: vertical;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 2.5rem;
+  color: rgb(180, 180, 180);
+}
+
+input[type="submit"] {
+  background-color: rgb(43, 75, 128);
+  color: white;
+  padding: 1.5rem 3rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 2.5rem;
+  color: white;
+}
+
+input[type="submit"]:hover {
+  background-color: #ff5c97;
+}
+
+.contact-form {
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  padding-left: 1.5rem;
+  padding: 1.5rem;
+  margin-top: 5rem;
+}
+
+::placeholder {
+  color: rgb(180, 180, 180);
+}
+
+/* ---------- 992px Media Queries ----------*/
+/* -----------------------------------------*/
+@media (max-width: 992px) {
+  /* -------------------- Home Queries --------------------*/
+  /* ------------------------------------------------------*/
+  .jumbo-left {
+    text-align: center;
+    margin-top: 8rem;
+  }
+
+  .jumbo-right {
+    display: none;
+  }
+
+  .service-card3 {
+    margin-top: 5rem;
+  }
+
+  .footer-main {
+    text-align: center;
+  }
+
+  .footer-brand {
+    justify-content: center;
+  }
+
+  /* -------------------- Clients Queries --------------------*/
+  /* ---------------------------------------------------------*/
+  .clients-section {
+    margin-top: 8rem;
+  }
+
+  .client-brands i {
+    padding-right: 2.2rem;
+    padding-left: 2.2rem;
+  }
+
+  /* -------------------- About Queries --------------------*/
+  /* -------------------------------------------------------*/
+  .about-content h3,
+  .about-content p {
+    text-align: center;
+  }
+
+  .about-image {
+    display: none;
+  }
+
+  .team-card3 {
+    margin-top: 2.5rem;
+  }
+}
+
+/* ---------- 768px Media Queries ----------*/
+/* -----------------------------------------*/
+@media (max-width: 768px) {
+  /* -------------------- Home Queries --------------------*/
+  /* ------------------------------------------------------*/
+  .home-section {
+    margin-bottom: 8rem;
+  }
+
+  .jumbo-right {
+    display: none;
+  }
+
+  .seo-section {
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+  }
+
+  .seo-title h2 {
+    padding-bottom: 8rem;
+  }
+
+  .service-card2,
+  .service-card3,
+  .service-card4,
+  .service-card5,
+  .service-card6 {
+    margin-top: 3rem;
+  }
+
+  .footer-main {
+    margin-top: 8rem;
+    padding-top: 8rem;
+  }
+
+  .footer-txt,
+  .footer-navigation,
+  .footer-contact {
+    margin-bottom: 8rem;
+  }
+
+  .copy2020 p {
+    padding-top: 1rem;
+    padding-bottom: 5rem;
+  }
+
+  /* -------------------- Clients Queries --------------------*/
+  /* ---------------------------------------------------------*/
+  .clients-section {
+    margin-top: 5rem;
+  }
+}
+
+/* ---------- 576px Media Queries ----------*/
+/* -----------------------------------------*/
+@media (max-width: 576px) {
+  /* -------------------- Home Queries --------------------*/
+  /* ------------------------------------------------------*/
+  .copy2020 p {
+    padding-top: 2.5rem;
+  }
+
+  /* -------------------- About Queries --------------------*/
+  /* -------------------------------------------------------*/
+  .team-card2 {
+    margin-top: 2.5rem;
+  }
+}
